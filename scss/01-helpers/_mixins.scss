@@ -1,5 +1,4 @@
 //! grid child mixin
-
 @mixin grid-child($col-start, $col-end, $row-start, $row-end) {
 	-ms-grid-column: $col-start;
 	-ms-grid-column-span: $col-end - $col-start;
@@ -9,8 +8,15 @@
 	grid-row: #{$row-start}/#{$row-end};
 }
 
-//! media query mixin
+//! flexbox helper
+@mixin flex($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
 
+//! media query mixin
 // mobile first
 $breakpoints-up: (
 	"phablet": "400px",
