@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	overflow-x: hidden;
+	box-sizing: border-box;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+img {
+	max-width: 100%;
+	display: block;
+}

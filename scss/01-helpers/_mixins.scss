@@ -1,0 +1,44 @@
+//! grid child mixin
+
+@mixin grid-child($col-start, $col-end, $row-start, $row-end) {
+	-ms-grid-column: $col-start;
+	-ms-grid-column-span: $col-end - $col-start;
+	-ms-grid-row: $row-start;
+	-ms-grid-row-span: $row-end - $row-start;
+	grid-column: #{$col-start}/#{$col-end};
+	grid-row: #{$row-start}/#{$row-end};
+}
+
+//! media query mixin
+
+// mobile first
+$breakpoints-up: (
+	"phablet": "400px",
+	"tablet": "550px",
+	"desktop": "750px",
+	"desktophd": "1000px",
+	"desktopfhd": "1200px",
+);
+
+// desktop fist
+$breakpoints-down: (
+	"mobile": "400px",
+	"phablet": "550px",
+	"tablet": "750px",
+	"desktop": "1000px",
+	"desktophd": "1200px",
+	"desktopfhd": "1440px",
+);
+
+@mixin respond-up($size) {
+	@media only screen and (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin respond-down($size) {
+	@media only screen and (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
+//! end
